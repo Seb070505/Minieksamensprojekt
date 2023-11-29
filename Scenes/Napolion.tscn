@@ -1,0 +1,205 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Napoleon.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Napolion.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Copperplate Gothic Bold Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 0.937255, 0.866667, 0.584314 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=7]
+outline_color = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 40.0
+height = 38.0
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 0.937255, 0.866667, 0.584314 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 3 )
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 337.013
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 0.937255, 0.866667, 0.584314 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=6]
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="Napolion" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Spørgsmål_3_panel" type="Panel" parent="."]
+margin_left = -288.0
+margin_top = -504.0
+margin_bottom = -458.0
+rect_scale = Vector2( 2, 2 )
+custom_styles/panel = SubResource( 5 )
+
+[node name="Spørgsmål_3_tekst" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -168.0
+margin_top = -480.0
+margin_right = 1.0
+margin_bottom = -439.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 7 )
+text = "Hvordan døde jeg?
+"
+
+[node name="Forkert_Spørgsmål_3" type="Button" parent="."]
+margin_left = -208.0
+margin_top = -280.0
+margin_right = 2.0
+margin_bottom = -240.0
+rect_scale = Vector2( 2, 2 )
+text = "Jeg blev myrdet ved forgiftning."
+
+[node name="Rigtig_Spørgsmål_3" type="Button" parent="."]
+margin_left = -120.0
+margin_top = -384.0
+margin_bottom = -344.0
+rect_scale = Vector2( 2, 2 )
+text = "Jeg døde af kraft."
+
+[node name="Forkert2_Spørgsmål_3" type="Button" parent="."]
+margin_left = -104.0
+margin_top = -176.0
+margin_right = 1.0
+margin_bottom = -136.0
+rect_scale = Vector2( 2, 2 )
+text = "Jeg døde i krig."
+
+[node name="Napoleon" type="Sprite" parent="."]
+scale = Vector2( 4.7, 4.7 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Spørgsmål_2_panel" type="Panel" parent="."]
+visible = false
+margin_left = -288.0
+margin_top = -504.0
+margin_bottom = -458.0
+rect_scale = Vector2( 2, 2 )
+custom_styles/panel = SubResource( 4 )
+
+[node name="Spørgsmål_2_tekst" type="Label" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -224.0
+margin_top = -496.0
+margin_right = 2.0
+margin_bottom = -433.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 8 )
+text = "Hvad ledte til jeg røg af 
+                   magten?
+"
+
+[node name="Forkert_Spørgsmål_2" type="Button" parent="."]
+visible = false
+margin_left = -144.0
+margin_top = -384.0
+margin_right = 2.0
+margin_bottom = -344.0
+rect_scale = Vector2( 2, 2 )
+text = "Jeg døde af alderdom"
+
+[node name="Rigtig_Spørgsmål_2" type="Button" parent="."]
+visible = false
+margin_left = -344.0
+margin_top = -280.0
+margin_right = 1.0
+margin_bottom = -240.0
+rect_scale = Vector2( 2, 2 )
+text = "Jeg blev tvunget af magten ved hjælp af militærmagt"
+
+[node name="Forkert2_Spørgsmål_2" type="Button" parent="."]
+visible = false
+margin_left = -200.0
+margin_top = -176.0
+margin_bottom = -136.0
+rect_scale = Vector2( 2, 2 )
+text = "Jeg gik af magten af egen vilje"
+
+[node name="Zone" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zone"]
+shape = SubResource( 3 )
+
+[node name="Spørgsmål_1_panel" type="Panel" parent="."]
+visible = false
+margin_left = -288.0
+margin_top = -504.0
+margin_bottom = -458.0
+rect_scale = Vector2( 2, 2 )
+custom_styles/panel = SubResource( 2 )
+
+[node name="Spørgsmål_1_tekst" type="Label" parent="."]
+visible = false
+modulate = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
+margin_left = -272.0
+margin_top = -480.0
+margin_bottom = -448.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 6 )
+text = "Hvordan kom jeg til magten?"
+
+[node name="Rigtig_Spørgsmål_1" type="Button" parent="."]
+visible = false
+margin_left = -368.0
+margin_top = -384.0
+margin_right = 1.0
+margin_bottom = -344.0
+rect_scale = Vector2( 2, 2 )
+text = "Ved et militærkup hvorefter jeg tog pladsen som kejser."
+
+[node name="Forkert_Spørgsmål_1" type="Button" parent="."]
+visible = false
+margin_left = -312.0
+margin_top = -176.0
+margin_bottom = -136.0
+rect_scale = Vector2( 2, 2 )
+text = "Jeg blev valgt som kejser af et flertal politikere."
+
+[node name="Forkert2_Spørgsmål_1" type="Button" parent="."]
+visible = false
+margin_left = -344.0
+margin_top = -280.0
+margin_right = 1.0
+margin_bottom = -240.0
+rect_scale = Vector2( 2, 2 )
+text = "  Jeg blev kejser efter min far, som var kejser, døde. "
+
+[connection signal="pressed" from="Forkert_Spørgsmål_3" to="." method="_on_Forkert_Sprgsml_3_pressed"]
+[connection signal="pressed" from="Rigtig_Spørgsmål_3" to="." method="_on_Rigtig_Sprgsml_3_pressed"]
+[connection signal="pressed" from="Forkert2_Spørgsmål_3" to="." method="_on_Forkert2_Sprgsml_3_pressed"]
+[connection signal="pressed" from="Forkert_Spørgsmål_2" to="." method="_on_Forkert_Sprgsml_2_pressed"]
+[connection signal="pressed" from="Rigtig_Spørgsmål_2" to="." method="_on_Rigtig_Sprgsml_2_pressed"]
+[connection signal="pressed" from="Forkert2_Spørgsmål_2" to="." method="_on_Forkert2_Sprgsml_2_pressed"]
+[connection signal="body_entered" from="Zone" to="." method="_on_Zone_body_entered"]
+[connection signal="body_exited" from="Zone" to="." method="_on_Zone_body_exited"]
+[connection signal="pressed" from="Rigtig_Spørgsmål_1" to="." method="_on_Rigtig_pressed"]
+[connection signal="pressed" from="Forkert_Spørgsmål_1" to="." method="_on_Forkert_pressed"]
+[connection signal="pressed" from="Forkert2_Spørgsmål_1" to="." method="_on_Forkert2_pressed"]

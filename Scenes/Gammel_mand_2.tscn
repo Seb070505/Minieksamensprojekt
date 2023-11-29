@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Npc.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Gammel_mand_2.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Copperplate Gothic Bold Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0352941, 0.0352941, 0.0313726, 0.745098 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=4]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 24.0
+height = 48.0
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 130.231
+
+[node name="Gammel_mand_2" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Npc" type="Sprite" parent="."]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0.768627 )
+margin_left = -168.0
+margin_top = -288.0
+margin_right = 167.0
+margin_bottom = -49.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -160.0
+margin_top = -280.0
+margin_right = 164.0
+margin_bottom = -63.0
+custom_fonts/font = SubResource( 4 )
+text = "Cæsar har mistet sin 
+Hukommelse, hjælp ham med at få
+den tilbage. Der er spredt 3
+Informationer om Cæsar ud 
+over denne verden, find dem og 
+svar på Cæsars spørgsmål!
+
+Du kan finde Cæsar bag de væltede 
+søjler, som ryddes væk når alle
+informationerne er samlet"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Interact_zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interact_zone"]
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="Interact_zone" to="." method="_on_Interact_zone_body_entered"]
+[connection signal="body_exited" from="Interact_zone" to="." method="_on_Interact_zone_body_exited"]

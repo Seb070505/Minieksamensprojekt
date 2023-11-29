@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Copperplate Gothic Bold Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/Lille_tutorial.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0.341176 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="Lille_tutorial" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 24.0
+margin_top = 208.0
+margin_right = 1902.0
+margin_bottom = 752.0
+custom_fonts/font = SubResource( 2 )
+text = "Velkommen til Ancient Adventures!!
+Her er en lille indtroduktion, du er en tidsrejsende fra fremtiden, du har til formål at 
+minde Historiske personer om hvem de er, da de nemlig lider af hukommelsestab.
+Du bevæger dig ved at benytte WASD, og angriber ved at benytte piletasterne, 
+du kan intergere med Npc'er ved at benytte 'Space'.
+Du kan ydermere display de informationer som de finder hen af vejen med 'E' og fjerne dem igen med 'R'.
+
+Held og Lykke Tidsrejsende!"
+
+[node name="Button" type="Button" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 816.0
+margin_top = 520.0
+margin_right = 960.0
+margin_bottom = 563.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 3 )
+text = "OK"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
