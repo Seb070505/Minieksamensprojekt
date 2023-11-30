@@ -37,15 +37,17 @@ minde Historiske personer om hvem de er, da de nemlig lider af hukommelsestab.
 Du bevæger dig ved at benytte WASD, og angriber ved at benytte piletasterne, 
 du kan intergere med Npc'er ved at benytte 'Space'.
 Du kan ydermere display de informationer som de finder hen af vejen med 'E' og fjerne dem igen med 'R'.
+Du kan tilgå menuen ved at trykke på 'Esc', hvor du kan vægle at gå tilbage til lobbien, eller se denne
+tutorial igen
 
 Held og Lykke Tidsrejsende!"
 
 [node name="Button" type="Button" parent="."]
 modulate = Color( 1, 0, 0, 1 )
 margin_left = 816.0
-margin_top = 520.0
+margin_top = 609.0
 margin_right = 960.0
-margin_bottom = 563.0
+margin_bottom = 652.0
 rect_scale = Vector2( 2, 2 )
 custom_fonts/font = SubResource( 3 )
 text = "OK"
